@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+<div class="container">
+    <div class="left-column">
+        <h1 class="header-title">
+            Box Shadow CSS Generator
+        </h1>
+        <div class="horizontal-length">
+            <div class="label">
+                <p>Horizontal Length</p>
+                <p><input type="number" value="12" id="horizontalVal"> px</p>
+            </div>
+            <input id="horizontal" type="range" min="-200" max="200" value="0">
+        </div>
+    </div>
+    <div class="right-column">
+        <button class="button">Button</button>
+    </div>
+</div>
+
+
+<input type="range" class="border-radius" max="50" value="10">
+<input type="range" class="offsetX" value="10">
+<input type="range" class="offsetY" value="10">
+<input type="range" class="blur" value="10">
+<input type="range" class="spread" value="10">
+<input type="color" class="box-shadow" value="10">
+<input type="color" class="box-color" value="10">
+
+<input type="radio" class="outset" name="type" checked>
+<input type="radio" class="inset" name="type">
+<div class="box"></div>
+<div class="out"></div>
+<script src="./script.js"></script>
+</body>
+</html>
