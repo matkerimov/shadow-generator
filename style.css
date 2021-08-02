@@ -227,3 +227,10 @@ body {
     text-align: center;
 
 }
+.colors{
+    display: flex;
+    justify-content: start;
+}
+.radio-box{
+    margin: 0 30px;
+}

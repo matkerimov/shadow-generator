@@ -14,6 +14,8 @@ const slider = document.getElementById("myRange");
 const output = document.getElementById("demo");
 const outputX = document.getElementById("demoX");
 const outputY = document.getElementById("demoY");
+const outputBlur = document.getElementById("demoBlur");
+const outputSpread = document.getElementById("demoSpread");
 // onchange | после касания
 // oninput  | выводит ищменения моментально
 // ---------
@@ -36,19 +38,34 @@ inset.oninput = cssGenerator
 
 
 function cssGenerator() {
-    console.log(outset.checked)
-    box.style.borderRadius = slider.value + "%"
-    box.style.boxShadow = `${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px ${shadowColor.value}`;
-    box.style.backgroundColor = boxColor.value;
-    out.innerHTML = `box-shadow: ${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px ${shadowColor.value} <br>`
-    out.innerHTML = out.innerHTML + `-webkit-box-shadow: ${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px ${shadowColor.value} <br>`;
-    out.innerHTML = out.innerHTML + `-moz-box-shadow: ${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px ${shadowColor.value}`;
+    if ( inset.checked){
+        console.log(inset.checked)
+        box.style.borderRadius = slider.value + "%"
+        box.style.boxShadow = `${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px ${shadowColor.value}`;
+        box.style.backgroundColor = boxColor.value;
 
-    output.innerHTML = slider.value;
-    output.innerHTML = slider.value;
+        out.innerHTML = `box-shadow: ${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px ${shadowColor.value} <br>`
+        out.innerHTML = out.innerHTML + `-webkit-box-shadow: ${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px ${shadowColor.value} <br>`;
+        out.innerHTML = out.innerHTML + `-moz-box-shadow: ${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px ${shadowColor.value}`;
+
+    }else {
+        console.log(inset)
+        box.style.borderRadius = slider.value + "%"
+        box.style.boxShadow = `${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px ${shadowColor.value} inset`;
+        box.style.backgroundColor = boxColor.value;
+
+        out.innerHTML = `box-shadow: ${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px ${shadowColor.value} inset;<br>`
+        out.innerHTML = out.innerHTML + `-webkit-box-shadow: ${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px ${shadowColor.value} inset;<br>`;
+        out.innerHTML = out.innerHTML + `-moz-box-shadow: ${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px ${shadowColor.value} inset;`;
+
+    }
+
     // --------------
+    output.innerHTML = slider.value
     outputX.innerHTML = offsetX.value
     outputY.innerHTML = offsetY.value
+    outputBlur.innerHTML = blur.value
+    outputSpread.innerHTML = spread.value
 }
 
 cssGenerator()
