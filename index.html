@@ -9,36 +9,69 @@
     <title>Document</title>
 </head>
 <body>
+<h1 class="main-title">Box Shadow CSS Generator</h1>
 <div class="container">
     <div class="left-column">
-        <h1 class="header-title">
-            Box Shadow CSS Generator
-        </h1>
-        <div class="horizontal-length">
-            <div class="label">
-                <p>Horizontal Length</p>
-                <p><input type="number" value="12" id="horizontalVal"> px</p>
+        <h2 class="header-title">
+            Box Shadow Options
+        </h2>
+        <div class="radio-border">
+                <h4 class="border-text">Border Radius</h4>
+<!--            <input type="range" class="border-radius" max="50" value="10">-->
+            <div class="slidecontainer">
+                <input type="range"  max="50" value="0" class="slider" id="myRange">
+                <p>Value: <span id="demo"></span></p>
             </div>
-            <input id="horizontal" type="range" min="-200" max="200" value="0">
+        </div>
+        <div class="radio-horizontal">
+            <div class="horizontal-text">
+                <p>Horizontal Shadow Length</p>
+            </div>
+            <input type="range" class="offsetX" value="10">
+        </div>
+        <div class="radio-vertical">
+            <div class="vertical-text">
+                <p>Vertical Shadow Length </p>
+            </div>
+            <input type="range" class="offsetY" value="10">
+        </div>
+        <div class="radio-blur">
+            <div class="blur-text">
+                <p>Blur Radius</p>
+            </div>
+            <input type="range" class="blur" value="10">
+        </div>
+        <div class="radio-spread">
+            <div class="spread-text">
+                <p>Spread Radius</p>
+            </div>
+            <input type="range" class="spread" value="10">
+        </div>
+        <div class="radio-shadow">
+            <div class="shadow-text">
+                <p>Shadow Color</p>
+            </div>
+            <input type="color" class="box-shadow" value="10">
+        </div>
+        <div class="radio-box">
+            <div class="box-text">
+                <p>Box Color</p>
+            </div>
+            <input type="color" class="box-color" value="10">
+        </div>
+        <div class="radio-turn">
+            <input type="radio" class="outset" name="type" checked>
+            <input type="radio" class="inset" name="type">
         </div>
     </div>
     <div class="right-column">
-        <button class="button">Button</button>
+        <div class="box"></div>
     </div>
 </div>
 
 
-<input type="range" class="border-radius" max="50" value="10">
-<input type="range" class="offsetX" value="10">
-<input type="range" class="offsetY" value="10">
-<input type="range" class="blur" value="10">
-<input type="range" class="spread" value="10">
-<input type="color" class="box-shadow" value="10">
-<input type="color" class="box-color" value="10">
 
-<input type="radio" class="outset" name="type" checked>
-<input type="radio" class="inset" name="type">
-<div class="box"></div>
+
 <div class="out"></div>
 <script src="./script.js"></script>
 </body>
