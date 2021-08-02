@@ -38,27 +38,15 @@ inset.oninput = cssGenerator
 
 
 function cssGenerator() {
-    if ( inset.checked){
-        console.log(inset.checked)
+    console.log(inset.checked)
+    let shadow = inset.checked ? "" : "inset"
         box.style.borderRadius = slider.value + "%"
-        box.style.boxShadow = `${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px ${shadowColor.value}`;
+        box.style.boxShadow = `${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px ${shadowColor.value} ${shadow} ;`;
         box.style.backgroundColor = boxColor.value;
 
-        out.innerHTML = `box-shadow: ${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px ${shadowColor.value} <br>`
-        out.innerHTML = out.innerHTML + `-webkit-box-shadow: ${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px ${shadowColor.value} <br>`;
-        out.innerHTML = out.innerHTML + `-moz-box-shadow: ${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px ${shadowColor.value}`;
-
-    }else {
-        console.log(inset)
-        box.style.borderRadius = slider.value + "%"
-        box.style.boxShadow = `${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px ${shadowColor.value} inset`;
-        box.style.backgroundColor = boxColor.value;
-
-        out.innerHTML = `box-shadow: ${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px ${shadowColor.value} inset;<br>`
-        out.innerHTML = out.innerHTML + `-webkit-box-shadow: ${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px ${shadowColor.value} inset;<br>`;
-        out.innerHTML = out.innerHTML + `-moz-box-shadow: ${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px ${shadowColor.value} inset;`;
-
-    }
+        out.innerHTML = `box-shadow: ${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px ${shadowColor.value} ${shadow} ;<br>`
+        out.innerHTML = out.innerHTML + `-webkit-box-shadow: ${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px ${shadowColor.value}  ${shadow} ;<br>`;
+        out.innerHTML = out.innerHTML + `-moz-box-shadow: ${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px ${shadowColor.value} ${shadow} ;`;
 
     // --------------
     output.innerHTML = slider.value
