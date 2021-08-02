@@ -12,6 +12,8 @@ const inset = document.querySelector('.inset')
 // ---------
 const slider = document.getElementById("myRange");
 const output = document.getElementById("demo");
+const outputX = document.getElementById("demoX");
+const outputY = document.getElementById("demoY");
 // onchange | после касания
 // oninput  | выводит ищменения моментально
 // ---------
@@ -39,11 +41,14 @@ function cssGenerator() {
     box.style.boxShadow = `${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px ${shadowColor.value}`;
     box.style.backgroundColor = boxColor.value;
     out.innerHTML = `box-shadow: ${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px ${shadowColor.value} <br>`
-    out.innerHTML =  out.innerHTML + `-webkit-box-shadow: ${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px ${shadowColor.value} <br>`;
-    out.innerHTML =  out.innerHTML + `-moz-box-shadow: ${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px ${shadowColor.value}`;
+    out.innerHTML = out.innerHTML + `-webkit-box-shadow: ${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px ${shadowColor.value} <br>`;
+    out.innerHTML = out.innerHTML + `-moz-box-shadow: ${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px ${shadowColor.value}`;
 
     output.innerHTML = slider.value;
     output.innerHTML = slider.value;
-
+    // --------------
+    outputX.innerHTML = offsetX.value
+    outputY.innerHTML = offsetY.value
 }
+
 cssGenerator()
