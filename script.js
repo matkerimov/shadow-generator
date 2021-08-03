@@ -40,8 +40,9 @@ inset.oninput = cssGenerator
 function cssGenerator() {
     console.log(inset.checked)
     let shadow = inset.checked ? "" : "inset"
+    console.log(`${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px ${shadowColor.value} ${shadow};`)
         box.style.borderRadius = slider.value + "%"
-        box.style.boxShadow = `${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px ${shadowColor.value} ${shadow};`;
+        box.style.boxShadow = `${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px ${shadowColor.value} ${shadow}`;
         box.style.backgroundColor = boxColor.value;
 
         out.innerHTML = `box-shadow: ${offsetX.value}px ${offsetY.value}px ${blur.value}px ${spread.value}px ${shadowColor.value} ${shadow};<br>`
